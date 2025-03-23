@@ -41,6 +41,6 @@ for(const subArray of ans){
     UniqueArray.add(sortedStr);
 }
 
-const result = Array.from(UniqueArray).mao((pair)=>JSON.parse(pair));
+const result = Array.from(UniqueArray).map((pair)=>JSON.parse(pair));
 console.log(result);
 
