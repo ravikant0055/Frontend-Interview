@@ -16,6 +16,7 @@ const answer = people.reduce((acc, curr)=>{
    else{
        acc[curr.age] = [curr.name]
    }
+   return acc;
 },{});
 
 console.log(answer);
