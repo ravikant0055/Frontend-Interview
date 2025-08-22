@@ -8,12 +8,15 @@ const Accordian = () => {
         { title: "four", content: "one word content" },
     ];
 
-    // store index of open accordion (null = none open)
-    const [openIndex, setOpenIndex] = useState(null);
+    // store open state for each accordion in an array of booleans
+    const [openItems, setOpenItems] = useState([]);
 
     const toggleAccordion = (index) => {
-        setOpenIndex(openIndex === index ? null : index); 
-        // if same index clicked → close, else open
+        setOpenItems((prev) => {
+            const newOpenItems = [...prev];
+            newOpenItems[index] = !newOpenItems[index]; // toggle clicked one
+            return newOpenItems;
+        });
     };
 
     return (
@@ -25,9 +28,9 @@ const Accordian = () => {
                         onClick={() => toggleAccordion(id)}
                     >
                         <span>{item.title}</span>
-                        <span>{openIndex === id ? "▲" : "▼"}</span>
+                        <span>{openItems[id] ? "▲" : "▼"}</span>
                     </button>
-                    {openIndex === id && (
+                    {openItems[id] && (
                         <div>
                             {item.content}
                         </div>
