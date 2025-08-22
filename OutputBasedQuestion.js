@@ -20,7 +20,7 @@ console.log(1+"2"-1);       // output : 11
 
 console.log(true + false);  // output : 1
 console.log([] == []);      // output : false  --Because no same referance
-console.log([] + false);    // output : true   --empty [] == "" so "" + false = false
+console.log([] + false);    // output : false   --empty [] == "" so "" + false = false
 console.log([] + {});       // output : [object, object]  --empty [] == "" and emply {} == "[object,object]"
 
 console.log(!!"");          // output : false  --empty "" is falsy value in js so !""==true and !!""==false
