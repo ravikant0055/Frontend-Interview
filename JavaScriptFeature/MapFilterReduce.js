@@ -12,6 +12,6 @@ const totalMarks = student.map((stu)=>
   stu.marks<60 ? {...stu, marks: stu.marks+20} : stu
 )
 .filter((stu) => stu.marks>60)
-.reduce((sum,stu) => sum+stu.marks, 0);
+.reduce((sum,stu) => sum+=stu.marks, 0);
 
 console.log(totalMarks);
